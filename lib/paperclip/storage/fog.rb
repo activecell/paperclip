@@ -160,10 +160,10 @@ module Paperclip
       def host_name_for_directory
         if @options[:fog_directory].to_s =~ Fog::AWS_BUCKET_SUBDOMAIN_RESTRICTON_REGEX
           # This:
-          "#{@options[:fog_directory]}."
+          #"#{@options[:fog_directory]}."
 
           # Should be modified to this:
-          # "#{@options[:fog_directory]}.s3.amazonaws.com"
+          "#{@options[:fog_directory]}.s3.amazonaws.com"
           # When fog with https://github.com/fog/fog/pull/857 gets released
         else
           "s3.amazonaws.com/#{@options[:fog_directory]}"
